@@ -17,9 +17,9 @@ public class SliderChanger : MonoBehaviour
 
     private void OnEnable()
     {
-        float _account = _player.GetAccountValue();
+        float account = _player.GetAccountValue();
         OnSliderChanged(_slider.value);
-        OnAccountChanged(_account);
+        OnAccountChanged(account);
         _slider.onValueChanged.AddListener(OnSliderChanged);
         _player.AccountChanged += OnAccountChanged;
     }
