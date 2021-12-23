@@ -1,14 +1,12 @@
 using UnityEngine;
 
-public class Money : ObjectOfPool
+public class Money : Bonuses
 {
-    [SerializeField] private int _money;
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent<Player>(out Player player))
+        if (collision.gameObject.TryGetComponent<Account>(out Account account))
         {
-            player.IncreaseMoney(_money);
+            account.Increase(RestoringValue);
             gameObject.SetActive(false);
         }
     }

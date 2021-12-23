@@ -145,4 +145,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02bac092ad96074cb3d58083c0ab879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _money: 5
+  RestoringValue: 5

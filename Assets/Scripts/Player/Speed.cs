@@ -46,13 +46,7 @@ public class Speed : MonoBehaviour
             StopCoroutine(_currentCoroutine);
         }
 
-        _target += value;
-
-        if (_target >= _max)
-        {
-            _target = _max;
-        }
-
+        _target = _target >= _max - value ? _max : _target + value;
         _currentCoroutine = StartCoroutine(Accelerate());
     }
 

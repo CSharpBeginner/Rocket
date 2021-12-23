@@ -9,7 +9,7 @@ public class Fuel : PlayerField
     private Coroutine _currentCoroutine;
 
     public override event UnityAction<float> Changed;
-    public event UnityAction Died;
+    public event UnityAction Over;
 
     public void PrepareToConsume()
     {
@@ -35,7 +35,7 @@ public class Fuel : PlayerField
 
         if (Value == 0)
         {
-            Died?.Invoke();
+            Over?.Invoke();
         }
     }
 }

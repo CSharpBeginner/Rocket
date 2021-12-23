@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private Transform _cortainer;
+    [SerializeField] private Transform _container;
     [SerializeField] private ObjectOfPool _prefab;
-    [SerializeField] private SpawnSquare _square;
-    [SerializeField] private SpawnSquare _initilizeSquare;
+    [SerializeField] private SquareOfSpawn _square;
+    [SerializeField] private SquareOfSpawn _initilizeSquare;
     [SerializeField] private int _poolLength;
 
     private static Player _player;
@@ -55,13 +55,13 @@ public class Spawner : MonoBehaviour
 
         for (int i = 0; i < _poolLength; i++)
         {
-            ObjectOfPool spawnedGameObject = Instantiate(_prefab, _cortainer);
+            ObjectOfPool spawnedGameObject = Instantiate(_prefab, _container);
             Spawn(spawnedGameObject, _initilizeSquare);
             _pool[i] = spawnedGameObject;
         }
     }
 
-    private void Spawn(ObjectOfPool spawnedObject, SpawnSquare spawnSquare)
+    private void Spawn(ObjectOfPool spawnedObject, SquareOfSpawn spawnSquare)
     {
         spawnedObject.transform.position = new Vector2(Random.Range(spawnSquare.LeftBottomCorner.x, spawnSquare.LeftBottomCorner.x + spawnSquare.Width), Random.Range(_square.LeftBottomCorner.y, spawnSquare.LeftBottomCorner.y + spawnSquare.Height));
         spawnedObject.gameObject.SetActive(true);

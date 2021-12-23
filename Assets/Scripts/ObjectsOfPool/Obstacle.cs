@@ -33,9 +33,9 @@ public class Obstacle : ObjectOfPool
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.TryGetComponent<Player>(out Player player))
+        if (collision.gameObject.TryGetComponent<Health>(out Health health))
         {
-            player.DecreaseHealth(_damage);
+            health.Decrease(_damage);
 
             if (_currentCoroutine != null)
             {

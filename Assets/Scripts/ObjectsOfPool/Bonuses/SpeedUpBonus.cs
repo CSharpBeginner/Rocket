@@ -1,14 +1,12 @@
 using UnityEngine;
 
-public class SpeedUpBonus : ObjectOfPool
+public class SpeedUpBonus : Bonuses
 {
-    [SerializeField] private float _speed;
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent<Player>(out Player player))
+        if (collision.gameObject.TryGetComponent<Speed>(out Speed speed))
         {
-            player.Accelerate(_speed);
+            speed.Increase(RestoringValue);
             gameObject.SetActive(false);
         }
     }

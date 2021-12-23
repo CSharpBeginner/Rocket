@@ -53,12 +53,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ded38ba9a98bc3c48821ffab4ed951c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slider: {fileID: 1314647793559264018}
-  _player: {fileID: 0}
+  _account: {fileID: 0}
   _startPrice: 15
   _priceMultiplier: 2
-  _rightButton: {fileID: 1314647792766525454}
-  _leftButton: {fileID: 1314647792974651100}
+  _upgradingButton: {fileID: 1314647792766525454}
+  _degradingButton: {fileID: 1314647792974651100}
+  _maxLevel: 10
 --- !u!114 &7076505609898898398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,8 +387,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1314647791708768343}
-        m_TargetAssemblyTypeName: SliderChanger, Assembly-CSharp
-        m_MethodName: Increase
+        m_TargetAssemblyTypeName: RocketUpgrading, Assembly-CSharp
+        m_MethodName: Upgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -531,8 +531,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1314647791708768343}
-        m_TargetAssemblyTypeName: SliderChanger, Assembly-CSharp
-        m_MethodName: Decrease
+        m_TargetAssemblyTypeName: RocketUpgrading, Assembly-CSharp
+        m_MethodName: Degrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -793,6 +793,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1314647793559264019}
   - component: {fileID: 1314647793559264018}
+  - component: {fileID: 7887741264652927497}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -873,3 +874,16 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7887741264652927497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314647793559264020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b028aad5fac25c64e8225c08f947e8f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rocketUpgrading: {fileID: 0}

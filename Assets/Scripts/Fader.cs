@@ -5,7 +5,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(RawImage))]
 public class Fader : MonoBehaviour
 {
-    [SerializeField] private Player _player;
+    [SerializeField] private Altitude _altitude;
     [SerializeField] private float _multiplier;
 
     private float _startAltitude;
@@ -15,12 +15,12 @@ public class Fader : MonoBehaviour
 
     private void OnEnable()
     {
-        _player.AltitudeChanged += CalculateValue;
+        _altitude.Changed += CalculateValue;
     }
 
     private void OnDisable()
     {
-        _player.AltitudeChanged -= CalculateValue;
+        _altitude.Changed -= CalculateValue;
     }
 
     public void SetStartAltitude(float value)

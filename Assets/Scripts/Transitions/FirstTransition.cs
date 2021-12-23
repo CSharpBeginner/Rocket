@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class StartTransition : Transition
+public class FirstTransition : Transition
 {
     [SerializeField] private Spawner[] _spawners;
 

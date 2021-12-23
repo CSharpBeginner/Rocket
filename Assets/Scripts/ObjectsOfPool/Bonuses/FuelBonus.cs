@@ -1,14 +1,12 @@
 using UnityEngine;
 
-public class FuelBonus : ObjectOfPool
+public class FuelBonus : Bonuses
 {
-    [SerializeField] private int _fuel;
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent<Player>(out Player player))
+        if (collision.gameObject.TryGetComponent<Fuel>(out Fuel fuel))
         {
-            player.IncreaseFuel(_fuel);
+            fuel.Increase(RestoringValue);
             gameObject.SetActive(false);
         }
     }

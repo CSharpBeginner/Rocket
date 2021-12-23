@@ -19,27 +19,13 @@ public abstract class PlayerField : MonoBehaviour
 
     public void Increase(float value)
     {
-        float target = Value + value;
-
-        if (target > MaxValue)
-        {
-            target = MaxValue;
-        }
-
-        Value = target;
+        Value = Value > MaxValue - value ? MaxValue : Value + value;
         Changed?.Invoke(Value);
     }
 
     public void Decrease(float value)
     {
-        float target = Value - value;
-
-        if (target < 0)
-        {
-            target = 0;
-        }
-
-        Value = target;
+        Value = Value < value ? 0 : Value - value;
         Changed?.Invoke(Value);
     }
 

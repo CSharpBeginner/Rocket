@@ -2,7 +2,7 @@ using UnityEngine.Events;
 
 public class Health : PlayerField
 {
-    public event UnityAction Died;
+    public event UnityAction Over;
 
     private void OnEnable()
     {
@@ -17,7 +17,7 @@ public class Health : PlayerField
     {
         if (value <= 0)
         {
-            Died?.Invoke();
+            Over?.Invoke();
         }
     }
 }

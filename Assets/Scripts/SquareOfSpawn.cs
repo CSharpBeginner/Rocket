@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SpawnSquare : MonoBehaviour
+public class SquareOfSpawn : MonoBehaviour
 {
     [SerializeField] private Vector2 _size;
 
