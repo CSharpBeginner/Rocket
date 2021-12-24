@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Money : Bonuses
+public class Money : Bonus
 {
     protected override void OnTriggerEnter2D(Collider2D collision)
     {

@@ -5,11 +5,11 @@ public abstract class PlayerField : MonoBehaviour
 {
     [SerializeField] protected float MaxValue;
 
-    protected float Value;
-
     public virtual event UnityAction<float> Changed;
     public event UnityAction<float> MaxValueChanged;
     public event UnityAction Reseted;
+
+    public float Value { get; protected set; }
 
     protected void Awake()
     {

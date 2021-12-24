@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FuelBonus : Bonuses
+public class FuelBonus : Bonus
 {
     protected override void OnTriggerEnter2D(Collider2D collision)
     {

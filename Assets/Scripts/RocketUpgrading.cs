@@ -29,8 +29,7 @@ public class RocketUpgrading : MonoBehaviour
     {
         Changed += TryChangeInteractivityOfDegradingButton;
         Changed?.Invoke(_level);
-        float account = _account.GetValue();
-        IsUpgradingAvailable(account);
+        IsUpgradingAvailable(_account.Value);
         _account.Changed += TryChangeInteractivityOfUpgradingButton;
     }
 

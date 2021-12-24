@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class Bonuses : ObjectOfPool
+public abstract class Bonus : ObjectOfPool
 {
     [SerializeField] protected float RestoringValue;
 

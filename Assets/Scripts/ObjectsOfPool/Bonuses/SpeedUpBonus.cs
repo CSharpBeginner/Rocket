@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SpeedUpBonus : Bonuses
+public class SpeedUpBonus : Bonus
 {
     protected override void OnTriggerEnter2D(Collider2D collision)
     {

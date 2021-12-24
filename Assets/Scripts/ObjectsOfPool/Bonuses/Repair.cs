@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Repair : Bonuses
+public class Repair : Bonus
 {
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
